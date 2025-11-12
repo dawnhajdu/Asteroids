@@ -20,10 +20,11 @@ def main():
             if event.type == pygame.QUIT:
                 return
     
-    
+        plyer.update(dt)
         screen.fill("black")
         plyer.draw(screen)
         pygame.display.flip()
+        
         
         delta_time = clock_obj.tick(60)
         dt = delta_time / 1000  #convert from milliseconds to seconds
