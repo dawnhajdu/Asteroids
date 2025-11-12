@@ -6,6 +6,11 @@ def main():
     
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    
+    clock_obj = pygame.time.Clock()
+    dt = 0
+    
+    print(f"the clock object is {clock_obj}")
 
     while True:
         log_state()
@@ -17,7 +22,10 @@ def main():
     
         screen.fill("black")
         pygame.display.flip()
-    
+        
+        delta_time = clock_obj.tick(60)
+        dt = delta_time / 1000  #convert from milliseconds to seconds
+        
     
     print("Starting Asteroids with pygame version: pygame.version.ver")
     print(f"Screen width: {SCREEN_WIDTH}")
